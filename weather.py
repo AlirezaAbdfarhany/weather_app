@@ -65,7 +65,6 @@ class Ui_WeatherWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
 
-        # ---------- Search Bar ----------
         self.groupBox = QtWidgets.QGroupBox(self.centralwidget)
         self.groupBox.setGeometry(QtCore.QRect(10, 10, 580, 70))
         self.groupBox.setTitle("Search")
@@ -90,7 +89,6 @@ class Ui_WeatherWindow(object):
         self.pushButtonSearch.setObjectName("pushButtonSearch")
         self.horizontalLayout.addWidget(self.pushButtonSearch)
 
-        # ---------- Result Area ----------
         self.groupBoxResult = QtWidgets.QGroupBox(self.centralwidget)
         self.groupBoxResult.setGeometry(QtCore.QRect(10, 90, 580, 300))
         self.groupBoxResult.setTitle("Weather")
@@ -145,7 +143,7 @@ class Ui_WeatherWindow(object):
             self.gridLayout.addWidget(lblVal, row, 1)
             self.labels[key] = (lblVal, unit)
 
-        # ---------- Status Bar ----------
+
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -153,7 +151,6 @@ class Ui_WeatherWindow(object):
         MainWindow.setStatusBar(self.statusbar)
         self.statusbar.showMessage("Ready")
 
-        # ---------- Signals ----------
         self.pushButtonSearch.clicked.connect(self.search)
         self.lineEditCity.returnPressed.connect(self.search)
 
